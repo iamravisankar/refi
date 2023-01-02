@@ -1,7 +1,6 @@
 type PopularParings = {
     name: string
     imgUrl: string
-    backgroundColor: string
 }
 
 export type Asset = {
