@@ -3,7 +3,7 @@ import { Asset } from '../../models/asset'
 
 
 export const AssetCard = (asset: Asset) => {
-    //  let bg = 'linear-gradient(180deg, #626a881a 0%, #eab3000f 100%)';
+
     return (
         <div className='asset-card flex justify-center items-start relative w-[285px] h-[340px] rounded-t-[20px] rounded-b-[15px] border border-b-0 border-solid lg:backdrop-blur-3xl'>
             <div className="asset-card__logo-border absolute w-[111px] h-[102px] rounded-b-[100px] mt-[-45px] border-0">

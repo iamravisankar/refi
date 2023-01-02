@@ -5,16 +5,13 @@ import { fetchTrendingAssets, update, round } from '../../reducers/trending/tren
 
 
 export const TrendingAssets = () => {
-    const trendingAssets = useAppSelector(state => state.trendingAssets.assets)
-    // const isLoaded = useAppSelector(state => !state.trendingAssets.loading)
+    const trendingAssets = useAppSelector(state => state.trendingAssets.assets);
 
-    const dispatch = useAppDispatch()
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
-        dispatch(fetchTrendingAssets())
+        dispatch(fetchTrendingAssets());
     }, []);
-
-
 
     useEffect(() => {
         const interval = setInterval(async () => dispatch(update(await round(trendingAssets))
