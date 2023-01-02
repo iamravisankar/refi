@@ -2,11 +2,9 @@
 
 .asset-card {
     border-color: $card-border;
-    background: linear-gradient(180deg, rgba(98, 106, 136, 0.1) 0%, rgba(46, 49, 73, 0.1) 107.43%);
+    background: $card-gradient-background;
 
     &__logo-container {
-        background: linear-gradient(180deg, #626a881a 0%, #eab3000f 100%);
-
         &__img {
             background: transparent;
         }
