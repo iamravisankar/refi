@@ -1,0 +1,80 @@
+@import 'src/theme';
+
+.asset-card {
+    border-color: $card-border;
+    background: linear-gradient(180deg, rgba(98, 106, 136, 0.1) 0%, rgba(46, 49, 73, 0.1) 107.43%);
+
+    &__logo-container {
+        background: linear-gradient(180deg, #626a881a 0%, #eab3000f 100%);
+
+        &__img {
+            background: transparent;
+        }
+    }
+
+    &__logo-border {
+        background-image: $logo-gradient-border;
+    }
+
+    &__logo::before {
+        content: "";
+        position: absolute;
+        top: 44px;
+        left: -18pt;
+        width: 26px;
+        height: 20px;
+        border-top-right-radius: 50px;
+        box-shadow: 15px -15px 0 15px $background-dark;
+        border-right: $card-curve-border 1px solid;
+        border-top: $card-curve-border 1px solid;
+    }
+
+    &__logo::after {
+        content: "";
+        position: absolute;
+        top: 44px;
+        right: -18pt;
+        width: 26px;
+        height: 20px;
+        border-top-left-radius: 50px;
+        box-shadow: -15px -15px 0 15px $background-dark;
+        border-left: $card-curve-border 1px solid;
+        border-top: $card-curve-border 1px solid;
+    }
+
+    &__details {
+
+        &__asset-name {
+            color: $card-asset-name;
+        }
+
+        &__title {
+            color: $card-title;
+        }
+
+        &__value-container {
+            background: $background-dark;
+            color: $value-text;
+            z-index: 80;
+        }
+
+        &__value-container-border {
+            background: $value-container-border;
+            z-index: -9;
+        }
+
+        &__value-container-background {
+            background: $background-dark;
+            z-index: -5;
+
+        }
+
+        &__price-change {
+            color: $positive-green;
+
+            &__negative {
+                color: $negative-red;
+            }
+        }
+    }
+}
