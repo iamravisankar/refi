@@ -14,13 +14,13 @@ const initialState: InitialState = {
     error: ''
 }
 
-export const fetchTrendingAssets = createAsyncThunk('trendingAssets', () => {
+export const fetchTrendingAssets = createAsyncThunk('trendingAssets', (): Promise<Asset[]> => {
     return axios
         .get('https://backend.onstep.in/relative/trending-assets.json')
         .then(response => response.data)
 })
 
-const changePrice = (asset: Asset) => {
+const changePrice = (asset: Asset): Asset => {
     let randomNumber = Math.random() * (1.2 - 0.8) + 0.8;
     if (Math.random() < 0.5) {
         return asset;
@@ -31,7 +31,7 @@ const changePrice = (asset: Asset) => {
     return tempAsset
 }
 
-export const round = async (trendingAssets: Asset[]) => {
+export const getRandomData = async (trendingAssets: Asset[]): Promise<Asset[]> => {
     let tempTrendingAssets = [...trendingAssets];
 
     tempTrendingAssets = await trendingAssets.map((asset) => {

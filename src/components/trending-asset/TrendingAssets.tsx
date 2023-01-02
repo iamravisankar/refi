@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { AssetCard } from '../asset-card/AssetCard';
 import { useAppSelector, useAppDispatch } from '../../app/hooks'
-import { fetchTrendingAssets, update, round } from '../../reducers/trending/trendingAssetsSlice'
+import { fetchTrendingAssets, update, getRandomData } from '../../reducers/trending/trendingAssetsSlice'
 
 
 export const TrendingAssets = () => {
@@ -14,7 +14,7 @@ export const TrendingAssets = () => {
     }, []);
 
     useEffect(() => {
-        const interval = setInterval(async () => dispatch(update(await round(trendingAssets))
+        const interval = setInterval(async () => dispatch(update(await getRandomData(trendingAssets))
         ), 2000);
         return () => {
             clearInterval(interval);
